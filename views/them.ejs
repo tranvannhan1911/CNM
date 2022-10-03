@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NodeJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .err {
+            color: red;
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 500px; margin: 50px auto">
+        <h4>Thêm máy tính</h4>
+        <form action="/them-may-tinh" method="POST">
+            <div class="mb-3">
+                <label for="ma_may" class="form-label">Mã máy tính</label>
+                <input class="form-control" id="ma_may" name="ma_may">
+                <p class="err">
+                    <%=err.ma_may%>
+                </p>
+            </div>
+            <div class="mb-3">
+                <label for="ten_may" class="form-label">Tên máy tính</label>
+                <input class="form-control" id="ten_may" name="ten_may">
+                <p class="err">
+                    <%=err.ten_may%>
+                </p>
+            </div>
+            <div class="mb-3">
+                <label for="hang" class="form-label">Hãng</label>
+                <input class="form-control" id="hang" name="hang">
+                <p class="err">
+                    <%=err.hang%>
+                </p>
+            </div>
+            <div class="mb-3">
+                <label for="gia" class="form-label">Giá</label>
+                <input type="number" class="form-control" id="gia" name="gia">
+                <p class="err">
+                    <%=err.gia%>
+                </p>
+            </div>
+            <div class="mb-3">
+                <label for="chi_tiet" class="form-label">Chi tiết</label>
+                <input class="form-control" id="chi_tiet" name="chi_tiet">
+                <p class="err">
+                    <%=err.chi_tiet%>
+                </p>
+            </div>
+            <div class="mb-3">
+                <p class="err">
+                    <%=fail%>
+                </p>
+            </div>
+            <div class="mb-3" style="text-align: center;">
+                <button class="btn btn-primary" type="submit">Thêm</button>
+            </div>
+            <a href="/">Về trang chủ</a>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NodeJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .err {
+            color: red;
+            font-size: small;
+        }
+        
+        .success {
+            color: green;
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding: 50px;">
+        <h4 style="width: 200px; margin-bottom: 30px">Công ty TNHH ABC CN Sài Gòn</h4>
+        <div>
+            <a class="btn btn-primary" href="/them-may-tinh">Thêm</a>
+            <h5>Danh mục các máy tính</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên máy tính</th>
+                        <th>Hãng</th>
+                        <th>Giá</th>
+                        <th>Chi tiết</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<data.length; i++){ %>
+                        <tr>
+                            <td>
+                                <%= i+1 %>
+                            </td>
+                            <td>
+                                <%= data[i].ten_may %>
+                            </td>
+                            <td>
+                                <%= data[i].hang %>
+                            </td>
+                            <td>
+                                <%= data[i].gia %>
+                            </td>
+                            <td>
+                                <%= data[i].chi_tiet %>
+                            </td>
+                            <td><a class="btn btn-danger" href="/xoa-may-tinh?ma_may=<%= data[i].ma_may %>">Xóa</a></td>
+                        </tr>
+                        <% } %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
